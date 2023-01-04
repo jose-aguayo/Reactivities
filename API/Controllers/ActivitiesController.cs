@@ -12,18 +12,13 @@ namespace API.Controllers //namespaces are used to organize the classes
         {
             _context = context;
         }
-
+                  // [] it is a way of specifying attributes
         [HttpGet] //api/activities  definition of the http get method
         public async Task<ActionResult<List<Activity>>> GetActivities()
         {
             return await _context.Activities.ToListAsync();
         }
 
-        [HttpGet("{id}")] //api/activities/:id
-        public async Task<ActionResult<Activity>> GetActivity(Guid id)
-        {
-            return await _context.Activities.FindAsync(id);
-        }
-            
+
     }
 }
